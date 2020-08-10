@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: auto;
+    max-width: 1024px;
+}
+
+.week {
+    display: flex;
+    width: 30%;
+    font-size: 3em;
+    line-height: 3.5em;
+    justify-content: center;
+}
+
+.day {
+    font-size: 3em;
+    line-height: 3.5em;
+    width: 80%;
+    border: solid 1px #e2e2e2;
+    margin-bottom: 3%;
+    padding-left: 3%;
+}
+
+.day .name {
+    color: #767676;
+    display: inline-block;
+    width: 10%;
+}
+
+.day .meal {
+    color: #343434;
+}
