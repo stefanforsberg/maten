@@ -18,7 +18,7 @@ ready(() => {
     
     const weeknumber = moment(today, "DD-MM-YYYY").isoWeek();
 
-    document.querySelector(".week").innerHTML = `Meny för vecka ${weeknumber} (${moment().format("HH mm ss")})`;
+    document.querySelector(".week").innerHTML = `Meny för vecka ${weeknumber} (<a href="javascript:document.location.reload()">🔄</a>)`;
 
 
 
