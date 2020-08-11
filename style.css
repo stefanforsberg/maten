@@ -12,10 +12,23 @@ a {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.container.weekselector {
+    justify-content: space-between;
+    font-size: 4em;
+    width: 80%
+}
+
 .week {
     display: flex;
     font-size: 3em;
     line-height: 3.5em;
+    justify-content: center;
+}
+
+.nextweek {
+    display: flex;
+    font-size: 2em;
+    line-height: 2.5em;
     justify-content: center;
 }
 
@@ -25,19 +38,30 @@ a {
     width: 80%;
     border: solid 1px #e2e2e2;
     margin-bottom: 3%;
-    padding-left: 3%;
+}
+
+.daymini {
+    font-size: 2em;
+    line-height: 2em;
+    width: 80%;
+    border: solid 1px #e2e2e2;
+    margin-bottom: 3%;
 }
 
 .day.selected {
     background-color: #c1ebff;
 }
 
-.day .name {
+.day .name, .daymini .name {
     color: #767676;
     display: inline-block;
     width: 10%;
+    background-color: #f3f3f3;
+    text-align: center;
+    padding: 0px 15px;
 }
 
-.day .meal {
+.day .meal, .daymini .meal {
     color: #343434;
 }
+
