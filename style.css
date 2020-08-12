@@ -55,7 +55,7 @@ ul, li {
 .nextweek {
     display: flex;
     font-size: 1.5em;
-    line-height: 1.75em;
+    line-height: 2em;
     justify-content: center;
 }
 
