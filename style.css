@@ -16,7 +16,6 @@ ul, li {
     left: 0; top: 0; right: 0; bottom: 0;
     border: solid 1px #e2e2e2;
     margin: auto;
-    font-size: 2em;
     display: none;
 }
 
@@ -33,44 +32,44 @@ ul, li {
 .shoppinglist-container {
     display: flex;
     justify-content: left;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.75em;
+    font-size: 1.25rem;
     flex-direction: column;
     height: 100%;
 }
 
 .shoppinglist-container div {
-    padding: 15px;
+    padding: 8px;
 }
 
 .week {
-    display: flex;
-    font-size: 3em;
-    line-height: 3.5em;
-    justify-content: center;
-}
-
-.nextweek {
     display: flex;
     font-size: 2em;
     line-height: 2.5em;
     justify-content: center;
 }
 
+.nextweek {
+    display: flex;
+    font-size: 1.75em;
+    line-height: 2.5em;
+    justify-content: center;
+}
+
 .day {
-    font-size: 3em;
-    line-height: 3.5em;
-    width: 90%;
+    font-size: 1.6em;
+    line-height: 2em;
+    width: 98%;
     border: solid 1px #e2e2e2;
     margin-bottom: 3%;
 }
 
 .daymini {
-    font-size: 2em;
-    line-height: 2em;
-    width: 90%;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    width: 98%;
     border: solid 1px #e2e2e2;
     margin-bottom: 3%;
 }
@@ -82,10 +81,9 @@ ul, li {
 .day .name, .daymini .name {
     color: #767676;
     display: inline-block;
-    width: 10%;
+    width: 15%;
     background-color: #f3f3f3;
     text-align: center;
-    padding: 0px 15px;
 }
 
 .day .meal, .daymini .meal {
