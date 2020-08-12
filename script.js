@@ -63,7 +63,7 @@ ready(() => {
     
     const weeknumber = moment(today, "DD-MM-YYYY").isoWeek();
 
-    document.querySelector(".week").innerHTML = `Vecka ${weeknumber} (<a href="javascript:document.location.reload()">🔄</a>)`;
+    document.querySelector(".week").innerHTML = `Vecka ${weeknumber}`;
 
     document.querySelector(".nextweek").innerHTML = `Vecka ${weeknumber+1}`;
 

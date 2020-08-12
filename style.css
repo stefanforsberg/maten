@@ -21,7 +21,7 @@ ul, li {
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     padding: 0;
     margin: auto;
@@ -46,15 +46,15 @@ ul, li {
 
 .week {
     display: flex;
-    font-size: 2em;
-    line-height: 2.5em;
+    font-size: 1.75em;
+    line-height: 2em;
     justify-content: center;
 }
 
 .nextweek {
     display: flex;
-    font-size: 1.75em;
-    line-height: 2.5em;
+    font-size: 1.5em;
+    line-height: 1.75em;
     justify-content: center;
 }
 
