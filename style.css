@@ -2,6 +2,24 @@ a {
     text-decoration: none;
 }
 
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.shopping-list {
+    position: absolute;
+    background-color: rgba(255,255,255,0.95);
+    width: 90%;
+    height: 90%;
+    left: 0; top: 0; right: 0; bottom: 0;
+    border: solid 1px #e2e2e2;
+    margin: auto;
+    font-size: 2em;
+    display: none;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -12,10 +30,19 @@ a {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container.weekselector {
-    justify-content: space-between;
-    font-size: 4em;
-    width: 80%
+.shoppinglist-container {
+    display: flex;
+    justify-content: left;
+    flex-wrap: nowrap;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.75em;
+    flex-direction: column;
+    height: 100%;
+}
+
+.shoppinglist-container div {
+    padding: 15px;
 }
 
 .week {
@@ -35,7 +62,7 @@ a {
 .day {
     font-size: 3em;
     line-height: 3.5em;
-    width: 80%;
+    width: 90%;
     border: solid 1px #e2e2e2;
     margin-bottom: 3%;
 }
@@ -43,7 +70,7 @@ a {
 .daymini {
     font-size: 2em;
     line-height: 2em;
-    width: 80%;
+    width: 90%;
     border: solid 1px #e2e2e2;
     margin-bottom: 3%;
 }
@@ -64,4 +91,6 @@ a {
 .day .meal, .daymini .meal {
     color: #343434;
 }
+
+[data-shopping-selected="true"] .meal:after {content: ' 🛒';}
 

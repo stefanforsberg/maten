@@ -1,6 +1,6 @@
 const schedule = [
     ["Korvstroganof", "Kycklinggryta", "Friterad fisk & potatis", "Pasta & köttfärssås"],
-    ["Soppa & pannkakor", "Kyckling i ugn & potatis/sallad", "Ugnstekt lax & potatis", "Yakiniku"],
+    ["Soppa & pannkakor", "Kyckling i ugn & potatis", "Ugnstekt lax & potatis", "Yakiniku"],
     ["Korv & pasta", "Flygande Jakob", "Lax % nudelwok", "Köttbullar & potatis"]
 ]
 
@@ -12,8 +12,53 @@ function ready(fn) {
     }
 }
 
+function setupShoppingList() {
+
+    const shoppingListElement = document.querySelector(".shopping-list");
+
+    const shoppingListListElement = document.querySelector(".shoppinglist-container");
+
+    document.querySelector(".showshopping").addEventListener("click", () => {
+        
+        shoppingListListElement.textContent = '';
+        
+        const ingridients = Array.prototype.map.call(document.querySelectorAll('[data-shopping-selected="true"]'), (s) => 
+            s.dataset.shoppingIngridients.split(",")
+        )
+        .flat()
+        .sort();
+
+        ingridients.forEach(ingridient => {
+            let div = document.createElement('div');
+            shoppingListListElement.appendChild(div);
+
+            div.innerHTML += ingridient;
+        })
+
+        
+        shoppingListElement.style.display = 'block';
+    })
+
+    shoppingListElement.addEventListener("click", () => {
+        shoppingListElement.style.display = 'none';
+    })
+
+    document.querySelectorAll(".shopping").forEach((s) => {
+        s.addEventListener("click", (e)=> {
+            
+            if(e.currentTarget.dataset.shoppingSelected === "true") {
+                e.currentTarget.dataset.shoppingSelected = "false";
+            } else {
+                e.currentTarget.dataset.shoppingSelected = "true";
+            }
+        })
+    });
+}
+
 ready(() => {
     
+    setupShoppingList();
+
     const today = moment();
     
     const weeknumber = moment(today, "DD-MM-YYYY").isoWeek();

@@ -16,16 +16,24 @@
 </head>
 
 <body>
+
+    <div class="shopping-list">
+        <div class="shoppinglist-container">
+            
+            
+        </div>
+    </div>
+
     <div class="container">
         <div class="week"></div>
     </div>
 
     <div class="container">
-        <div class="day day-1">
-            <span class="name">Må</span> <span class="meal">?</span>
+        <div class="day day-1 shopping" data-shopping-selected="false" data-shopping-ingridients="Potatis,Lax,Sallad,Gurka,Mjöl">
+            <span class="name">Må<br></span> <span class="meal">?</span>
         </div>
 
-        <div class="day day-2">
+        <div class="day day-2 shopping" data-shopping-selected="false"  data-shopping-ingridients="Potatis,Lax,Sallad,Gurka,Mjöl">
             <span class="name">Ti</span> <span class="meal">?</span>
         </div>
 
@@ -58,6 +66,10 @@
         <div class="daymini day-4">
             <span class="name">To</span> <span class="meal">?</span>
         </div>
+    </div>
+
+    <div class="container">
+        <a href="#" class="showshopping">🛒</a>
     </div>
     
     <script src="script.js"></script>
