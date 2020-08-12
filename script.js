@@ -1,7 +1,22 @@
 const schedule = [
-    ["Korvstroganof", "Kycklinggryta", "Friterad fisk & potatis", "Pasta & köttfärssås"],
-    ["Soppa & pannkakor", "Kyckling i ugn & potatis", "Ugnstekt lax & potatis", "Yakiniku"],
-    ["Korv & pasta", "Flygande Jakob", "Lax % nudelwok", "Köttbullar & potatis"]
+    [
+        ["Korvstroganof", "Kalkonkorv,Matyoghurt,Lök"], 
+        ["Kycklinggryta", "Kycklinglårfile,Grönsaker (gryta),Creme fraiche (gryta)"],
+        ["Friterad fisk & potatis", "Vit färsk fisk,Potatis,Ägg,Majonäs"],
+        ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"]
+    ],
+    [
+        ["Soppa & pannkakor", "Kelda thai,Kelda tomat,Sylt,Mjölk,Ägg"],
+        ["Flygande Jakob", "Kyckling,Jordnötter,Mellangrädde,Bacon,Lök"], 
+        ["Yakiniku", "Renskav 2pkt,Soja,Gul lök,Vitvinsvinäger,Ingefära"], 
+        ["Ugnstekt lax & potatis", "Lax,Potatis,Rom,Rödlök,Lätt fraiche"], 
+    ],
+    [
+        ["Korv & pasta", "Korv,Penne,Mozzarella,Tomat,Rödlök"],
+        ["Kyckling i ugn", "Kycklingfile,Pommes,Grönsaker i ugn,God sallad"],
+        ["Lax % nudelwok", "Lax,Wokgrönsaker,Lime,Soja,Sweet chili sås"],
+        ["Köttbullar & potatis", "Nötfär,Potatis,Mellangrädde,Lingonsylt,Ägg"]
+    ]
 ]
 
 function ready(fn) {
@@ -74,8 +89,12 @@ ready(() => {
     const mealsForNextWeek = schedule[nextWeekScheduleIndex]
 
     for(var i = 0; i < mealsForCurrentWeek.length; i++) {
-        document.querySelector(`.day:nth-of-type(${i+1}) .meal`).innerHTML = mealsForCurrentWeek[i];
-        document.querySelector(`.daymini:nth-of-type(${i+1}) .meal`).innerHTML = mealsForNextWeek[i];
+
+        document.querySelector(`.day:nth-of-type(${i+1}) .meal`).innerHTML = mealsForCurrentWeek[i][0];
+        document.querySelector(`.daymini:nth-of-type(${i+1}) .meal`).innerHTML = mealsForNextWeek[i][0];
+
+        document.querySelector(`.day:nth-of-type(${i+1})`).dataset.shoppingIngridients = mealsForCurrentWeek[i][1];
+        document.querySelector(`.daymini:nth-of-type(${i+1})`).dataset.shoppingIngridients = mealsForNextWeek[i][1];
     }
 
     const weekDay = today.isoWeekday();

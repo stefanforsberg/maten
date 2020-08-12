@@ -11,12 +11,13 @@ ul, li {
 .shopping-list {
     position: absolute;
     background-color: rgba(255,255,255,0.95);
-    width: 90%;
+    width: 98%;
     height: 90%;
     left: 0; top: 0; right: 0; bottom: 0;
     border: solid 1px #e2e2e2;
     margin: auto;
     display: none;
+    overflow: scroll;
 }
 
 .container {
