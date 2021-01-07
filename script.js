@@ -2,13 +2,13 @@ const schedule = [
     [
         ["Kyckling i ugn", "Kycklingfile,Pommes,Grönsaker i ugn,God sallad"],
         ["Lax i ugn & mangosallad", "Lax,Ris,Lime,Mango (fryst)"], 
-        ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"]
+        ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"],
         ["Soppa & pannkakor", "Kelda thai,Kelda tomat,Sylt,Mjölk,Ägg"],
     ],
     [
         ["Flygande Jakob", "Kyckling,Jordnötter,Mellangrädde,Bacon,Lök"], 
         ["Lax & nudelwok", "Lax,Wokgrönsaker,Lime,Soja,Sweet chili sås"],
-        ["Köttbullar & potatis", "Nötfär,Potatis,Mellangrädde,Lingonsylt,Ägg"]
+        ["Köttbullar & potatis", "Nötfär,Potatis,Mellangrädde,Lingonsylt,Ägg"],
         ["Korv m. pasta & tomatsås", "Korv, Tomatsås, Pasta"]
     ],
     [
