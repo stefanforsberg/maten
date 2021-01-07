@@ -1,21 +1,21 @@
 const schedule = [
     [
-        ["Korvstroganof", "Kalkonkorv,Matyoghurt,Lök"], 
-        ["Kycklinggryta", "Kycklinglårfile,Grönsaker (gryta),Creme fraiche (gryta)"],
-        ["Friterad fisk & potatis", "Vit färsk fisk,Potatis,Ägg,Majonäs"],
+        ["Kyckling i ugn", "Kycklingfile,Pommes,Grönsaker i ugn,God sallad"],
+        ["Lax i ugn & mangosallad", "Lax,Ris,Lime,Mango (fryst)"], 
         ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"]
-    ],
-    [
-        ["Flygande Jakob", "Kyckling,Jordnötter,Mellangrädde,Bacon,Lök"], 
-        ["Ugnstekt lax & potatis", "Lax,Potatis,Rom,Rödlök,Lätt fraiche"], 
-        ["Korv & pasta", "Korv,Penne,Mozzarella,Tomat,Rödlök"],
         ["Soppa & pannkakor", "Kelda thai,Kelda tomat,Sylt,Mjölk,Ägg"],
     ],
     [
-        ["Yakiniku", "Renskav 2pkt,Soja,Gul lök,Vitvinsvinäger,Ingefära"], 
-        ["Kyckling i ugn", "Kycklingfile,Pommes,Grönsaker i ugn,God sallad"],
+        ["Flygande Jakob", "Kyckling,Jordnötter,Mellangrädde,Bacon,Lök"], 
         ["Lax & nudelwok", "Lax,Wokgrönsaker,Lime,Soja,Sweet chili sås"],
         ["Köttbullar & potatis", "Nötfär,Potatis,Mellangrädde,Lingonsylt,Ägg"]
+        ["Korv m. pasta & tomatsås", "Korv, Tomatsås, Pasta"]
+    ],
+    [
+        ["Pomodoro kyckling", "Kycklinglår,Fetaost,Morötter,Tomatsås"], 
+        ["Ugnstekt lax & potatis", "Lax,Potatis,Rom,Rödlök,Lätt fraiche"], 
+        ["Järpar med bulgur", "Nötfärs,Riven cheddarost,Gurka,Matyoughurt,Bulgur"],
+        ["Korvstroganof", "Kalkonkorv,Matyoghurt,Lök"], 
     ]
 ]
 
