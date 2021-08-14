@@ -1,22 +1,28 @@
 const schedule = [
     [
         ["Kyckling i ugn", "Kycklingfile,Pommes,Grönsaker i ugn,God sallad"],
-        ["Lax & mangosallad", "Lax,Ris,Lime,Mango (fryst)"], 
+        ["Lax & nudelwok", "Lax,Wokgrönsaker,Lime,Soja,Sweet chili sås,Nudlar"],
         ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"],
-        ["Soppa & pannkakor", "Kelda thai,Kelda tomat,Sylt,Mjölk,Ägg"],
+        ["Korvstroganof", "Falukorv,Matyoghurt,Lök"], 
     ],
     [
-        ["Flygande Jakob", "Kyckling,Jordnötter,Mellangrädde,Bacon,Lök"], 
-        ["Lax & nudelwok", "Lax,Wokgrönsaker,Lime,Soja,Sweet chili sås"],
-        ["Köttbullar & potatis", "Nötfär,Potatis,Mellangrädde,Lingonsylt,Ägg"],
+        ["Kyckling med apelsin", "Kyckling,Apelsin,Grädde,Brocolli,Potatis"], 
+        ["Lax & mangosallad", "Lax,Ris,Lime,Mango (fryst)"], 
+        ["Stekt potatis, ägg & bacon", "Ägg, bacon"],
+        ["Köttbullar i tomatsås", "Nötfärs,Lök,Tomatsås,Pasta", "https://www.ica.se/recept/kottbullar-i-tomatsas-722787/"],
+    ],
+    [
+        ["Pasta kikärtor", "Kikärtor,Tomatsås,Kapris,Smör,Parmesan"], 
+        ["Järpar med bulgur", "Nötfärs,Riven cheddarost,Gurka,Matyoughurt,Bulgur"],
+        ["Spicy Rigatonikyckling", "Rigatoni,Moz,Ruccola,Ugnsrostade grönsaker,Kyckling"], 
+        ["Koreanska wraps", "Fläsk,Tortilla,Kimchi,Tonkatsu", "https://www.koket.se/tonkatsu-japansk-schnitzel-med-kramig-kalsallad"], 
+    ],
+    [
+        ["Köttbullar & potatis", "Nötfärs,Potatis,Mellangrädde,Lingonsylt,Ägg"],
+        ["Pomodoro kyckling", "Kycklinglår,Fetaost,Morötter,PassTomater"], 
+        ["Stekt lax, potatis & sås", "Lax,Potatis,Sås till laxen"], 
         ["Korv med tomatsås", "Korv, Tomatsås, Pasta"]
     ],
-    [
-        ["Pomodoro kyckling", "Kycklinglår,Fetaost,Morötter,Tomatsås"], 
-        ["Ugnstekt lax & potatis", "Lax,Potatis,Rom,Rödlök,Lätt fraiche"], 
-        ["Järpar med bulgur", "Nötfärs,Riven cheddarost,Gurka,Matyoughurt,Bulgur"],
-        ["Korvstroganof", "Kalkonkorv,Matyoghurt,Lök"], 
-    ]
 ]
 
 function ready(fn) {
@@ -41,7 +47,10 @@ function setupShoppingList() {
             s.dataset.shoppingIngridients.split(",")
         )
         .flat()
+        .map(s => s.trim())
         .sort();
+
+        console.log(ingridients.sort())
 
         ingridients.forEach(ingridient => {
             let div = document.createElement('div');
@@ -90,7 +99,9 @@ ready(() => {
 
     for(var i = 0; i < mealsForCurrentWeek.length; i++) {
 
-        document.querySelector(`.day:nth-of-type(${i+1}) .meal`).innerHTML = mealsForCurrentWeek[i][0];
+        const link =  mealsForCurrentWeek[i][2];
+
+        document.querySelector(`.day:nth-of-type(${i+1}) .meal`).innerHTML = link ? `<a href="${link}" target="_blank">${mealsForCurrentWeek[i][0]}</a>` : mealsForCurrentWeek[i][0];
         document.querySelector(`.daymini:nth-of-type(${i+1}) .meal`).innerHTML = mealsForNextWeek[i][0];
 
         document.querySelector(`.day:nth-of-type(${i+1})`).dataset.shoppingIngridients = mealsForCurrentWeek[i][1];
