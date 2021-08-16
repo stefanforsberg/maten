@@ -6,6 +6,12 @@ const schedule = [
         ["Korvstroganof", "Falukorv,Matyoghurt,Lök"], 
     ],
     [
+        ["Köttbullar & potatis", "Nötfärs,Potatis,Mellangrädde,Lingonsylt,Ägg"],
+        ["Pomodoro kyckling", "Kycklinglår,Fetaost,Morötter,PassTomater"], 
+        ["Stekt lax, potatis & sås", "Lax,Potatis,Sås till laxen"], 
+        ["Korv med tomatsås", "Korv, Tomatsås, Pasta"]
+    ],
+    [
         ["Kyckling med apelsin", "Kyckling,Apelsin,Grädde,Brocolli,Potatis"], 
         ["Lax & mangosallad", "Lax,Ris,Lime,Mango (fryst)"], 
         ["Stekt potatis, ägg & bacon", "Ägg, bacon"],
@@ -16,13 +22,7 @@ const schedule = [
         ["Järpar med bulgur", "Nötfärs,Riven cheddarost,Gurka,Matyoughurt,Bulgur"],
         ["Spicy Rigatonikyckling", "Rigatoni,Moz,Ruccola,Ugnsrostade grönsaker,Kyckling"], 
         ["Koreanska wraps", "Fläsk,Tortilla,Kimchi,Tonkatsu", "https://www.koket.se/tonkatsu-japansk-schnitzel-med-kramig-kalsallad"], 
-    ],
-    [
-        ["Köttbullar & potatis", "Nötfärs,Potatis,Mellangrädde,Lingonsylt,Ägg"],
-        ["Pomodoro kyckling", "Kycklinglår,Fetaost,Morötter,PassTomater"], 
-        ["Stekt lax, potatis & sås", "Lax,Potatis,Sås till laxen"], 
-        ["Korv med tomatsås", "Korv, Tomatsås, Pasta"]
-    ],
+    ]
 ]
 
 function ready(fn) {
@@ -91,7 +91,7 @@ ready(() => {
 
     document.querySelector(".nextweek").innerHTML = `Vecka ${weeknumber+1}`;
 
-    const scheduleIndex = weeknumber % 3;
+    const scheduleIndex = weeknumber % schedule.length;
     const nextWeekScheduleIndex = scheduleIndex === (schedule.length-1) ? 0 : scheduleIndex+1;
 
     const mealsForCurrentWeek = schedule[scheduleIndex];
