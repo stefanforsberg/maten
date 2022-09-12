@@ -6,7 +6,7 @@ const schedule = [
     ["Pytt i panna", "Veg pytt,Rödbeter,Ägg"],
   ],
   [
-    ["Kyckling i kokosmjölk", "Kyckling,Nudlar,Paprika,Kokosmjölk,Currypasta,Purjolök", "https://www.ica.se/recept/kyckling-i-kokosmjolk-med-nudlar-714320/"],
+    ["Kyckling i kokosmjölk", "Kyckling,Nudlar,Paprika,Kokosmjölk,Currypasta,Purjolök,Lime", "https://www.ica.se/recept/kyckling-i-kokosmjolk-med-nudlar-714320/"],
     ["Köttbullar i tomatsås", "Nötfärs,Lök,Tomatsås,Pasta", "https://www.ica.se/recept/kottbullar-i-tomatsas-722787/"],
     ["Stekt lax, potatis & sås", "Lax,Potatis,Sås till laxen"],
     ["Korvstroganof", "Falukorv,Matyoghurt,Lök"],
