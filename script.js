@@ -41,17 +41,17 @@ function setupShoppingList() {
   document.querySelector(".showshopping").addEventListener("click", () => {
     shoppingListListElement.textContent = "";
 
-    const ingridients = Array.prototype.map
-      .call(document.querySelectorAll('[data-shopping-selected="true"]'), (s) => s.dataset.shoppingIngridients.split(","))
+    const ingredients = Array.prototype.map
+      .call(document.querySelectorAll('[data-shopping-selected="true"]'), (s) => s.dataset.shoppingIngredients.split(","))
       .flat()
       .map((s) => s.trim())
       .sort();
 
-    ingridients.forEach((ingridient) => {
+    ingredients.forEach((ingredient) => {
       let div = document.createElement("div");
       shoppingListListElement.appendChild(div);
 
-      div.innerHTML += ingridient;
+      div.innerHTML += ingredient;
     });
 
     shoppingListElement.style.display = "block";
@@ -95,8 +95,8 @@ ready(() => {
     document.querySelector(`.day:nth-of-type(${i + 1}) .meal`).innerHTML = link ? `<a href="${link}" target="_blank">${mealsForCurrentWeek[i][0]}</a>` : mealsForCurrentWeek[i][0];
     document.querySelector(`.daymini:nth-of-type(${i + 1}) .meal`).innerHTML = mealsForNextWeek[i][0];
 
-    document.querySelector(`.day:nth-of-type(${i + 1})`).dataset.shoppingIngridients = mealsForCurrentWeek[i][1];
-    document.querySelector(`.daymini:nth-of-type(${i + 1})`).dataset.shoppingIngridients = mealsForNextWeek[i][1];
+    document.querySelector(`.day:nth-of-type(${i + 1})`).dataset.shoppingIngredients = mealsForCurrentWeek[i][1];
+    document.querySelector(`.daymini:nth-of-type(${i + 1})`).dataset.shoppingIngredients = mealsForNextWeek[i][1];
   }
 
   const weekDay = today.isoWeekday();
