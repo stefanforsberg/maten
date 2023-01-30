@@ -8,7 +8,7 @@ const schedule = [
   [
     ["Kyckling i kokosmjölk", "Kyckling,Nudlar,Paprika,Kokosmjölk,Currypasta,Purjolök,Lime", "https://www.ica.se/recept/kyckling-i-kokosmjolk-med-nudlar-714320/"],
     ["Köttbullar i tomatsås", "Nötfärs,Lök,Tomatsås,Pasta", "https://www.ica.se/recept/kottbullar-i-tomatsas-722787/"],
-    ["Stekt lax, potatis & sås", "Lax,Potatis,Sås till laxen"],
+    ["Fetaostlax med potatis", "Lax,Potatis,Fetaost,Citron,Fryst dill", "https://www.zeta.nu/recept/fetaostfylld-lax-med-dill-och-citron/"],
     ["Korvstroganof", "Falukorv,Matyoghurt,Lök"],
   ],
   [
