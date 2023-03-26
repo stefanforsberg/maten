@@ -2,7 +2,7 @@ const schedule = [
   [
     ["Pomodoro kyckling", "Kycklinglår,Fetaost,Morötter,PassTomater"],
     ["Järpar med bulgur", "Nötfärs,Riven cheddarost,Gurka,Matyoughurt,Bulgur"],
-    ["Lax & mangosallad", "Lax,Ris,Lime,Mango (fryst)"],
+    ["Laxbowl", "Lax,Ris,Lime,Mango (fryst),Rödkål,Morötter,Majo"],
     ["Pytt i panna", "Veg pytt,Rödbeter,Ägg"],
   ],
   [
