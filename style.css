@@ -73,18 +73,18 @@ ul, li {
     line-height: 1.5em;
     width: 98%;
     border: solid 1px #e2e2e2;
-    margin-bottom: 3%;
 }
 
 .day.selected {
-    background-color: #c1ebff;
+    background: linear-gradient(135deg, #bafdf7, #fcf4ac, #fbb7f3);
+    animation: animate 2.5s linear infinite;
 }
 
 .day .name, .daymini .name {
-    color: #767676;
+    color: #f3f3f3;
     display: inline-block;
     width: 15%;
-    background-color: #f3f3f3;
+    background-color: #232323;
     text-align: center;
 }
 
@@ -93,4 +93,10 @@ ul, li {
 }
 
 [data-shopping-selected="true"] .meal:after {content: ' 🛒';}
+
+@keyframes animate {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
 

@@ -6,13 +6,19 @@ const schedule = [
     ["Pytt i panna", "Veg pytt,Rödbeter,Ägg"],
   ],
   [
-    ["Kyckling i kokosmjölk", "Kyckling,Nudlar,Paprika,Kokosmjölk,Currypasta,Purjolök,Lime", "https://www.ica.se/recept/kyckling-i-kokosmjolk-med-nudlar-714320/"],
-    ["Köttbullar i tomatsås", "Nötfärs,Lök,Tomatsås,Pasta", "https://www.ica.se/recept/kottbullar-i-tomatsas-722787/"],
-    ["Fetaostlax med potatis", "Lax,Potatis,Fetaost,Citron,Fryst dill", "https://www.zeta.nu/recept/fetaostfylld-lax-med-dill-och-citron/"],
-    ["Korvstroganof", "Falukorv,Matyoghurt,Lök"],
+    ["Currykyckling", "Kycklinglår,Gul lök, Mango Chutney, Ris", "https://www.arla.se/recept/currykyckling/"],
+    ["Tomatsoppa och pannkakor", "Lök,Grädde,Morötter,Laktosfri mjölk", "https://www.ica.se/recept/tomatsoppa-med-krafttoast-719564/"],
+    ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"],
+    ["Fisktacos", "Fisktacokrydda, Lax, Grönsaker, Mangosalso, Tortilla, Guaccemole, TacoChips"],
   ],
   [
     ["Spicy Rigatonikyckling", "Rigatoni,Moz,Ruccola,Ugnsrostade grönsaker,Kyckling"],
+    ["Köttbullar i tomatsås", "Nötfärs,Lök,Tomatsås,Pasta", "https://www.ica.se/recept/kottbullar-i-tomatsas-722787/"],
+    ["Fetaostlax med potatis", "Lax,Potatis,Fetaost,Citron,Fryst dill", "https://www.zeta.nu/recept/fetaostfylld-lax-med-dill-och-citron/"],
+    ["Libapizza", "Libabröd, Pizzasås, Salami, Vitkål"],
+  ],
+  [
+    ["Kyckling i kokosmjölk", "Kyckling,Nudlar,Paprika,Kokosmjölk,Currypasta,Purjolök,Lime", "https://www.ica.se/recept/kyckling-i-kokosmjolk-med-nudlar-714320/"],
     ["Lax & nudelwok", "Lax,Wokgrönsaker,Lime,Soja,Sweet chili sås,Nudlar"],
     ["Köttbullar & potatis", "Nötfärs,Potatis,Mellangrädde,Lingonsylt,Ägg"],
     ["Quinoabiffar med pommes", "Quinoza,Creme fre,Pommes,Fetaost"],
@@ -60,16 +66,6 @@ function setupShoppingList() {
   shoppingListElement.addEventListener("click", () => {
     shoppingListElement.style.display = "none";
   });
-
-  document.querySelectorAll(".shopping").forEach((s) => {
-    s.addEventListener("click", (e) => {
-      if (e.currentTarget.dataset.shoppingSelected === "true") {
-        e.currentTarget.dataset.shoppingSelected = "false";
-      } else {
-        e.currentTarget.dataset.shoppingSelected = "true";
-      }
-    });
-  });
 }
 
 ready(() => {
@@ -81,8 +77,6 @@ ready(() => {
 
   document.querySelector(".week").innerHTML = `Vecka ${weeknumber}`;
 
-  document.querySelector(".nextweek").innerHTML = `Vecka ${weeknumber + 1}`;
-
   const scheduleIndex = weeknumber % schedule.length;
   const nextWeekScheduleIndex = scheduleIndex === schedule.length - 1 ? 0 : scheduleIndex + 1;
 
@@ -93,11 +87,32 @@ ready(() => {
     const link = mealsForCurrentWeek[i][2];
 
     document.querySelector(`.day:nth-of-type(${i + 1}) .meal`).innerHTML = link ? `<a href="${link}" target="_blank">${mealsForCurrentWeek[i][0]}</a>` : mealsForCurrentWeek[i][0];
-    document.querySelector(`.daymini:nth-of-type(${i + 1}) .meal`).innerHTML = mealsForNextWeek[i][0];
-
     document.querySelector(`.day:nth-of-type(${i + 1})`).dataset.shoppingIngredients = mealsForCurrentWeek[i][1];
-    document.querySelector(`.daymini:nth-of-type(${i + 1})`).dataset.shoppingIngredients = mealsForNextWeek[i][1];
   }
+
+  // for (var i = 0; i < mealsForCurrentWeek.length; i++) {
+  //   document.querySelector(`.daymini:nth-of-type(${i + 1}) .meal`).innerHTML = mealsForNextWeek[i][0];
+  //   document.querySelector(`.daymini:nth-of-type(${i + 1})`).dataset.shoppingIngredients = mealsForNextWeek[i][1];
+  // }
+
+  let html = "";
+
+  for (var i = 1; i < 5; i++) {
+    const mealsForWeek = schedule[(scheduleIndex + i) % schedule.length];
+    const weekNumberForWeek = weeknumber + i;
+
+    html += `
+      <div class="container" style="margin-top: 3%;">
+        <div class="nextweek">Vecka ${weekNumberForWeek}</div>
+        <div class="daymini day-1 shopping" data-shopping-ingredients="${mealsForWeek[0][1]}"><span class="name">Må</span> <span class="meal">${mealsForWeek[0][0]}</span></div>
+        <div class="daymini day-2 shopping" data-shopping-ingredients="${mealsForWeek[1][1]}"><span class="name">Ti</span> <span class="meal">${mealsForWeek[1][0]}</span></div>
+        <div class="daymini day-3 shopping" data-shopping-ingredients="${mealsForWeek[2][1]}"><span class="name">On</span> <span class="meal">${mealsForWeek[2][0]}</span></div>
+        <div class="daymini day-4 shopping" data-shopping-ingredients="${mealsForWeek[3][1]}"><span class="name">To</span> <span class="meal">${mealsForWeek[3][0]}</span></div>
+        </div>
+    `;
+  }
+
+  document.getElementById("daymini-container").innerHTML = html;
 
   const weekDay = today.isoWeekday();
   const currentDayMeal = document.querySelector(`.day.day-${weekDay}`);
@@ -105,4 +120,14 @@ ready(() => {
   if (currentDayMeal) {
     currentDayMeal.classList.add("selected");
   }
+
+  document.querySelectorAll(".shopping").forEach((s) => {
+    s.addEventListener("click", (e) => {
+      if (e.currentTarget.dataset.shoppingSelected === "true") {
+        e.currentTarget.dataset.shoppingSelected = "false";
+      } else {
+        e.currentTarget.dataset.shoppingSelected = "true";
+      }
+    });
+  });
 });
