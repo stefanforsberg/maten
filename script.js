@@ -90,11 +90,6 @@ ready(() => {
     document.querySelector(`.day:nth-of-type(${i + 1})`).dataset.shoppingIngredients = mealsForCurrentWeek[i][1];
   }
 
-  // for (var i = 0; i < mealsForCurrentWeek.length; i++) {
-  //   document.querySelector(`.daymini:nth-of-type(${i + 1}) .meal`).innerHTML = mealsForNextWeek[i][0];
-  //   document.querySelector(`.daymini:nth-of-type(${i + 1})`).dataset.shoppingIngredients = mealsForNextWeek[i][1];
-  // }
-
   let html = "";
 
   for (var i = 1; i < 5; i++) {
@@ -104,10 +99,18 @@ ready(() => {
     html += `
       <div class="container" style="margin-top: 3%;">
         <div class="nextweek">Vecka ${weekNumberForWeek}</div>
-        <div class="daymini day-1 shopping" data-shopping-ingredients="${mealsForWeek[0][1]}"><span class="name">Må</span> <span class="meal">${mealsForWeek[0][0]}</span></div>
-        <div class="daymini day-2 shopping" data-shopping-ingredients="${mealsForWeek[1][1]}"><span class="name">Ti</span> <span class="meal">${mealsForWeek[1][0]}</span></div>
-        <div class="daymini day-3 shopping" data-shopping-ingredients="${mealsForWeek[2][1]}"><span class="name">On</span> <span class="meal">${mealsForWeek[2][0]}</span></div>
-        <div class="daymini day-4 shopping" data-shopping-ingredients="${mealsForWeek[3][1]}"><span class="name">To</span> <span class="meal">${mealsForWeek[3][0]}</span></div>
+        <div class="daymini day-1 shopping" data-shopping-ingredients="${mealsForWeek[0][1]}"><span class="name">Må</span> <span class="meal">${
+      mealsForWeek[0][2] ? `<a href="${mealsForWeek[0][2]}" target="_blank">${mealsForWeek[0][0]}</a>` : mealsForWeek[0][0]
+    }</span></div>
+        <div class="daymini day-2 shopping" data-shopping-ingredients="${mealsForWeek[1][1]}"><span class="name">Ti</span> <span class="meal">${
+      mealsForWeek[1][2] ? `<a href="${mealsForWeek[1][2]}" target="_blank">${mealsForWeek[1][0]}</a>` : mealsForWeek[1][0]
+    }</span></div>
+        <div class="daymini day-3 shopping" data-shopping-ingredients="${mealsForWeek[2][1]}"><span class="name">On</span> <span class="meal">${
+      mealsForWeek[2][2] ? `<a href="${mealsForWeek[2][2]}" target="_blank">${mealsForWeek[2][0]}</a>` : mealsForWeek[2][0]
+    }</span></div>
+        <div class="daymini day-4 shopping" data-shopping-ingredients="${mealsForWeek[3][1]}"><span class="name">To</span> <span class="meal">${
+      mealsForWeek[3][2] ? `<a href="${mealsForWeek[3][2]}" target="_blank">${mealsForWeek[3][0]}</a>` : mealsForWeek[3][0]
+    }</span></div>
         </div>
     `;
   }
