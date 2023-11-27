@@ -19,6 +19,7 @@ ul, li {
     margin: auto;
     display: none;
     overflow: scroll;
+    z-index:2;
 }
 
 .container {
