@@ -6,7 +6,7 @@ const schedule = [
     ["Pytt i panna", "Veg pytt,Rödbeter,Ägg"],
   ],
   [
-    ["Currykyckling", "Kycklinglår,Gul lök, Mango Chutney, Ris", "https://www.arla.se/recept/currykyckling/"],
+    ["Currykyckling", "Kycklinglår,Gul lök, Mango Chutney, Ris,Syrad grädde", "https://www.arla.se/recept/currykyckling/"],
     ["Tomatsoppa och pannkakor", "Lök,Grädde,Morötter,Laktosfri mjölk", "https://www.ica.se/recept/tomatsoppa-med-krafttoast-719564/"],
     ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"],
     ["Fisktacos", "Fisktacokrydda, Lax, Grönsaker, Mangosalso, Tortilla, Guaccemole, TacoChips"],
@@ -99,18 +99,14 @@ ready(() => {
     html += `
       <div class="container" style="margin-top: 3%;">
         <div class="nextweek">Vecka ${weekNumberForWeek}</div>
-        <div class="daymini day-1 shopping" data-shopping-ingredients="${mealsForWeek[0][1]}"><span class="name">Må</span> <span class="meal">${
-      mealsForWeek[0][2] ? `<a href="${mealsForWeek[0][2]}" target="_blank">${mealsForWeek[0][0]}</a>` : mealsForWeek[0][0]
-    }</span></div>
-        <div class="daymini day-2 shopping" data-shopping-ingredients="${mealsForWeek[1][1]}"><span class="name">Ti</span> <span class="meal">${
-      mealsForWeek[1][2] ? `<a href="${mealsForWeek[1][2]}" target="_blank">${mealsForWeek[1][0]}</a>` : mealsForWeek[1][0]
-    }</span></div>
-        <div class="daymini day-3 shopping" data-shopping-ingredients="${mealsForWeek[2][1]}"><span class="name">On</span> <span class="meal">${
-      mealsForWeek[2][2] ? `<a href="${mealsForWeek[2][2]}" target="_blank">${mealsForWeek[2][0]}</a>` : mealsForWeek[2][0]
-    }</span></div>
-        <div class="daymini day-4 shopping" data-shopping-ingredients="${mealsForWeek[3][1]}"><span class="name">To</span> <span class="meal">${
-      mealsForWeek[3][2] ? `<a href="${mealsForWeek[3][2]}" target="_blank">${mealsForWeek[3][0]}</a>` : mealsForWeek[3][0]
-    }</span></div>
+        <div class="daymini day-1 shopping" data-shopping-ingredients="${mealsForWeek[0][1]}"><span class="name">Må</span> <span class="meal">${mealsForWeek[0][2] ? `<a href="${mealsForWeek[0][2]}" target="_blank">${mealsForWeek[0][0]}</a>` : mealsForWeek[0][0]
+      }</span></div>
+        <div class="daymini day-2 shopping" data-shopping-ingredients="${mealsForWeek[1][1]}"><span class="name">Ti</span> <span class="meal">${mealsForWeek[1][2] ? `<a href="${mealsForWeek[1][2]}" target="_blank">${mealsForWeek[1][0]}</a>` : mealsForWeek[1][0]
+      }</span></div>
+        <div class="daymini day-3 shopping" data-shopping-ingredients="${mealsForWeek[2][1]}"><span class="name">On</span> <span class="meal">${mealsForWeek[2][2] ? `<a href="${mealsForWeek[2][2]}" target="_blank">${mealsForWeek[2][0]}</a>` : mealsForWeek[2][0]
+      }</span></div>
+        <div class="daymini day-4 shopping" data-shopping-ingredients="${mealsForWeek[3][1]}"><span class="name">To</span> <span class="meal">${mealsForWeek[3][2] ? `<a href="${mealsForWeek[3][2]}" target="_blank">${mealsForWeek[3][0]}</a>` : mealsForWeek[3][0]
+      }</span></div>
         </div>
     `;
   }
