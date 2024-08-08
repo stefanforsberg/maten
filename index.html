@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Maten</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="style.css?v=1.4" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
+  <title>Maten</title>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-      integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg=="
-      crossorigin="anonymous"
-    ></script>
-  </head>
+  <link rel="stylesheet" href="style.css?v=1.4" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
-  <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <section class="header">
+    <div>
+      <span><a href="#" id="calendar">📅</a></span>
+      <span><a href="#" class="showshopping">🛒</a></span>
+      <span><a href="#" id="recipie">🍳</a></span>
+    </div>
+  </section>
+
+  <div id="calendar-container" style="display: none">
     <div class="shopping-list">
       <div class="shoppinglist-container"></div>
     </div>
 
-    <div class="container">
-      <div class="week"></div>
-      <div class="week">
-        <a href="#" class="showshopping">🛒</a>
+
+    <div id="swiper" style="height: 70%;  max-width: 1024px; margin: auto; overflow: hidden;">
+      <div id="swiper-wrapper"
+        style="display: flex; transform: translateX(-0%); max-width: 100%; max-width: 1024px; height: 100%; transition: transform 0.5s ease;">
       </div>
     </div>
 
-    <div class="container">
-      <div class="day day-1 shopping" data-shopping-selected="false">
-        <span class="name">Må<br /></span> <span class="meal">?</span>
-      </div>
-
-      <div class="day day-2 shopping" data-shopping-selected="false"><span class="name">Ti</span> <span class="meal">?</span></div>
-
-      <div class="day day-3 shopping" data-shopping-selected="false"><span class="name">On</span> <span class="meal">?</span></div>
-
-      <div class="day day-4 shopping" data-shopping-selected="false"><span class="name">To</span> <span class="meal">?</span></div>
+    <div class="container" style="justify-content: center; font-size: 2em; margin-top: 15%">
+      <a href="javascript:document.location.reload()" style="text-decoration: none">&nbsp</a>
     </div>
+  </div>
 
-    <div id="daymini-container"></div>
+  <div id="recipie-container">
+    <ul>
+      <li><a href="https://www.tasteline.com/recept/ulrika-davidssons-thailandska-blomkalssoppa/">Thailänsk
+          blomkålssoppa</a></li>
+      <li><a href="https://www.ica.se/recept/burgundisk-kottgryta-5129/">Burgundisk köttgryta</a></li>
+      <li><a href="https://www.lecreuset.se/sv_SE/varldens-enklaste-grytbrod/r0000000000585.html">Grytbröd</a></li>
+      <li><a href="https://www.zeta.nu/recept/pasta-carbonara/">Carbonara</a></li>
 
-    <div class="container" style="justify-content: center; font-size: 2em">
-      <a href="javascript:document.location.reload()">🔄</a>
-    </div>
+    </ul>
+  </div>
 
-    <script src="script.js?v=2"></script>
-  </body>
+  <script src="script.js?v=3"></script>
+</body>
+
 </html>

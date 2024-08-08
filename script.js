@@ -27,7 +27,7 @@ const schedule = [
     ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"],
     ["Teriyakikyckling med ris", "Kycklingfile,Ris,Teriyakisås,Spenat", "https://www.ica.se/recept/kyckling-teriyaki-med-ris-och-minimajs-723152/"],
     ["Korv med potatismos", "Korv, Potatis"],
-    ["Pasta kikärtor", "Kikärtor,Tomatsås,Kapris,Smör,Parmesan"],
+    ["Pasta kikärtor", "Kilkärtor,Tomatsås,Kapris,Smör,Parmesan"],
   ],
 ];
 
@@ -68,53 +68,106 @@ function setupShoppingList() {
   });
 }
 
+const handleSwipe = () => {
+
+  const carouselWrapper = document.querySelector('#swiper-wrapper');
+  const carouselItems = document.querySelectorAll('.day-wrapper');
+
+  const totalItems = carouselItems.length;
+  let currentIndex = 0;
+
+  document.querySelector('body').addEventListener('touchstart', (e) => {
+    startX = e.changedTouches[0].screenX
+  });
+
+  document.querySelector('body').addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].screenX
+    handleGesture();
+  });
+
+  document.querySelectorAll('.swipe-left').forEach(x => {
+    x.addEventListener('click', (e) => {
+      swipeLeft()
+    });
+  })
+
+  document.querySelectorAll('.swipe-right').forEach(x => {
+    x.addEventListener('click', (e) => {
+      swipeRight()
+    });
+  })
+
+  const swipeLeft = () => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    showItem(currentIndex);
+  }
+
+  const swipeRight = () => {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    showItem(currentIndex);
+  }
+
+  function showItem(index) {
+    if (index >= 0 && index < totalItems) {
+      carouselWrapper.style.transform = `translateX(-${index * 100}%)`;
+    }
+  }
+
+  function handleGesture() {
+    if (startX - endX > 50) {
+      swipeLeft()
+    } else if (endX - startX > 50) {
+      swipeRight()
+    }
+  }
+}
+
 ready(() => {
   setupShoppingList();
+
+
 
   const today = moment();
 
   const weeknumber = moment(today, "DD-MM-YYYY").isoWeek();
 
-  document.querySelector(".week").innerHTML = `Vecka ${weeknumber}`;
-
   const scheduleIndex = weeknumber % schedule.length;
-  const nextWeekScheduleIndex = scheduleIndex === schedule.length - 1 ? 0 : scheduleIndex + 1;
-
-  const mealsForCurrentWeek = schedule[scheduleIndex];
-  const mealsForNextWeek = schedule[nextWeekScheduleIndex];
-
-  for (var i = 0; i < mealsForCurrentWeek.length; i++) {
-    const link = mealsForCurrentWeek[i][2];
-
-    document.querySelector(`.day:nth-of-type(${i + 1}) .meal`).innerHTML = link ? `<a href="${link}" target="_blank">${mealsForCurrentWeek[i][0]}</a>` : mealsForCurrentWeek[i][0];
-    document.querySelector(`.day:nth-of-type(${i + 1})`).dataset.shoppingIngredients = mealsForCurrentWeek[i][1];
-  }
 
   let html = "";
 
-  for (var i = 1; i < 5; i++) {
+  for (var i = 0; i < 5; i++) {
     const mealsForWeek = schedule[(scheduleIndex + i) % schedule.length];
     const weekNumberForWeek = weeknumber + i;
 
+    let daysHtml = ""
+    for (var d = 0; d < 4; d++) {
+      daysHtml += `
+      
+      <div class="day day-${d + 1} shopping" data-shopping-ingredients="${mealsForWeek[d][1]}">
+        <span class="meal">${mealsForWeek[d][2] ? `<a href="${mealsForWeek[0][2]}" target="_blank">${mealsForWeek[d][0]}</a>` : mealsForWeek[d][0]}</span>
+      </div>`
+    }
+
     html += `
-      <div class="container" style="margin-top: 3%;">
-        <div class="nextweek">Vecka ${weekNumberForWeek}</div>
-        <div class="daymini day-1 shopping" data-shopping-ingredients="${mealsForWeek[0][1]}"><span class="name">Må</span> <span class="meal">${mealsForWeek[0][2] ? `<a href="${mealsForWeek[0][2]}" target="_blank">${mealsForWeek[0][0]}</a>` : mealsForWeek[0][0]
-      }</span></div>
-        <div class="daymini day-2 shopping" data-shopping-ingredients="${mealsForWeek[1][1]}"><span class="name">Ti</span> <span class="meal">${mealsForWeek[1][2] ? `<a href="${mealsForWeek[1][2]}" target="_blank">${mealsForWeek[1][0]}</a>` : mealsForWeek[1][0]
-      }</span></div>
-        <div class="daymini day-3 shopping" data-shopping-ingredients="${mealsForWeek[2][1]}"><span class="name">On</span> <span class="meal">${mealsForWeek[2][2] ? `<a href="${mealsForWeek[2][2]}" target="_blank">${mealsForWeek[2][0]}</a>` : mealsForWeek[2][0]
-      }</span></div>
-        <div class="daymini day-4 shopping" data-shopping-ingredients="${mealsForWeek[3][1]}"><span class="name">To</span> <span class="meal">${mealsForWeek[3][2] ? `<a href="${mealsForWeek[3][2]}" target="_blank">${mealsForWeek[3][0]}</a>` : mealsForWeek[3][0]
-      }</span></div>
+   
+      <div class="day-wrapper">
+
+        <div class="day-heading">
+          <a href="#" style="text-align: left;" class="swipe-right">&nbsp;</a>
+          <span style="text-align: center">Vecka ${weekNumberForWeek}</span>
+          <a href="#" style="text-align: right;"  class="swipe-left">&nbsp;</a>
         </div>
+        
+        ${daysHtml}
+      </div>
+     
     `;
   }
 
-  document.getElementById("daymini-container").innerHTML = html;
+  document.getElementById("swiper-wrapper").innerHTML = html;
 
   const weekDay = today.isoWeekday();
-  const currentDayMeal = document.querySelector(`.day.day-${weekDay}`);
+  const currentDayMeal = document.querySelector(`.day-${weekDay}`);
 
   if (currentDayMeal) {
     currentDayMeal.classList.add("selected");
@@ -129,4 +182,15 @@ ready(() => {
       }
     });
   });
+
+  handleSwipe()
+
+  document.getElementById("calendar").addEventListener("click", () => {
+    document.getElementById("calendar-container").style.display = 'block'
+  })
+
+  document.getElementById("recipie").addEventListener("click", () => {
+    document.getElementById("calendar-container").style.display = 'none'
+  })
+
 });
