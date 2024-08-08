@@ -187,10 +187,12 @@ ready(() => {
 
   document.getElementById("calendar").addEventListener("click", () => {
     document.getElementById("calendar-container").style.display = 'block'
+    document.getElementById("recipie-container").style.display = 'none'
   })
 
   document.getElementById("recipie").addEventListener("click", () => {
     document.getElementById("calendar-container").style.display = 'none'
+    document.getElementById("recipie-container").style.display = 'block'
   })
 
 });
