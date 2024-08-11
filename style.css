@@ -9,7 +9,7 @@ section.header {
 
     color: white;
     font-size: 1.5rem;
-    background-color: #bafdf7;
+    background-color: #defdff;
     border-bottom: solid 1px #93c7c3;
 
     & div {
@@ -168,8 +168,12 @@ li {
     color: #343434;
 }
 
-[data-shopping-selected="true"] .meal:after {
-    content: ' 🛒';
+[data-shopping-selected="true"] {
+    background-color: #ecfeff;
+}
+
+[data-shopping-selected="true"] .meal::before {
+    content: '🛒 ';
 }
 
 @keyframes animate {
