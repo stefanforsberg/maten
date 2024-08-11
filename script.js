@@ -1,34 +1,41 @@
 const schedule = [
   [
+    ["Panerad fisk", "Panerad fisk,remouladsås,potatis"],
     ["Pomodoro kyckling", "Kycklinglår,Fetaost,Morötter,PassTomater"],
-    ["Järpar med bulgur", "Nötfärs,Riven cheddarost,Gurka,Matyoughurt,Bulgur"],
-    ["Laxbowl", "Lax,Ris,Lime,Mango (fryst),Rödkål,Morötter,Majo"],
-    ["Pytt i panna", "Veg pytt,Rödbeter,Ägg"],
-  ],
-  [
-    ["Currykyckling", "Kycklinglår,Gul lök, Mango Chutney, Ris,Syrad grädde", "https://www.arla.se/recept/currykyckling/"],
-    ["Tomatsoppa och pannkakor", "Lök,Grädde,Morötter,Laktosfri mjölk", "https://www.ica.se/recept/tomatsoppa-med-krafttoast-719564/"],
-    ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"],
-    ["Fisktacos", "Fisktacokrydda, Lax, Grönsaker, Mangosalso, Tortilla, Guaccemole, TacoChips"],
-  ],
-  [
-    ["Spicy Rigatonikyckling", "Rigatoni,Moz,Ruccola,Ugnsrostade grönsaker,Kyckling"],
-    ["Köttbullar i tomatsås", "Nötfärs,Lök,Tomatsås,Pasta", "https://www.ica.se/recept/kottbullar-i-tomatsas-722787/"],
-    ["Fetaostlax med potatis", "Lax,Potatis,Fetaost,Citron,Fryst dill", "https://www.zeta.nu/recept/fetaostfylld-lax-med-dill-och-citron/"],
-    ["Libapizza", "Libabröd, Pizzasås, Salami, Vitkål"],
-  ],
-  [
     ["Kyckling i kokosmjölk", "Kyckling,Nudlar,Paprika,Kokosmjölk,Currypasta,Purjolök,Lime", "https://www.ica.se/recept/kyckling-i-kokosmjolk-med-nudlar-714320/"],
-    ["Köttbullar & potatis", "Nötfärs,Potatis,Mellangrädde,Lingonsylt,Ägg"],
-    ["Lax & nudelwok", "Lax,Wokgrönsaker,Lime,Soja,Sweet chili sås,Nudlar"],
-    ["Quinoabiffar med pommes", "Quinoza,Creme fre,Pommes,Fetaost"],
+    ["Hamburgare", "Frysta hamburgare,Hamburgebröd"],
   ],
   [
+    ["Kyckling- och potatisgryta med curry", "Potatis,Röd paprika,Kyckling,Kokosmjölk", "https://www.ica.se/recept/kyckling-och-potatisgryta-med-curry-713333/"],
     ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"],
-    ["Teriyakikyckling med ris", "Kycklingfile,Ris,Teriyakisås,Spenat", "https://www.ica.se/recept/kyckling-teriyaki-med-ris-och-minimajs-723152/"],
-    ["Korv med potatismos", "Korv, Potatis"],
-    ["Pasta kikärtor", "Kilkärtor,Tomatsås,Kapris,Smör,Parmesan"],
+    ["Laxbowl", "Lax,Ris,Lime,Mango (fryst),Rödkål,Morötter,Majo"],
+    ["Kycklinggyros", "Kycklinggyros,Fetaost,Rödkål,Vitlökssås,Gyrosbröd"],
   ],
+  [
+    ["Köttbullar & potatis", "Nötfärs,Potatis,Mellangrädde,Lingonsylt,Ägg"],
+    ["Pasta kikärtor", "Kilkärtor,Tomatsås,Kapris,Smör,Parmesan"],
+    ["Lax & nudelwok", "Lax,Wokgrönsaker,Lime,Soja,Sweet chili sås,Nudlar"],
+    ["Korv med bröd", "Korv,bröd"],
+  ],
+  [
+    ["Fetaostlax med potatis", "Lax,Potatis,Fetaost,Citron,Fryst dill", "https://www.zeta.nu/recept/fetaostfylld-lax-med-dill-och-citron/"],
+    ["Pasta & köttfärssås", "Spaghetti,Nötfärs,Vitlök"],
+    ["Currykyckling", "Kycklinglår,Gul lök, Mango Chutney, Ris,Syrad grädde", "https://www.arla.se/recept/currykyckling/"],
+    ["Pastapesto", "Pesto,Fetaost"],
+  ],
+  [
+    ["Korv med potatismos", "Korv, Potatis"],
+    ["Spicy Rigatonikyckling", "Rigatoni,Moz,Ruccola,Ugnsrostade grönsaker,Kyckling"],
+    ["Fisktacos", "Fisktacokrydda, Lax, Grönsaker, Mangosalso, Tortilla, Guaccemole, TacoChips"],
+    ["Quesadillas", "Riven cheddaros,Tortillas"],
+  ],
+
+  // ["Pytt i panna", "Veg pytt,Rödbeter,Ägg"],
+  // ["Quinoabiffar med pommes", "Quinoza,Creme fre,Pommes,Fetaost"],
+  // ["Köttbullar i tomatsås", "Nötfärs,Lök,Tomatsås,Pasta", "https://www.ica.se/recept/kottbullar-i-tomatsas-722787/"],
+  // ["Libapizza", "Libabröd, Pizzasås, Salami, Vitkål"],
+  // ["Teriyakikyckling med ris", "Kycklingfile,Ris,Teriyakisås,Spenat", "https://www.ica.se/recept/kyckling-teriyaki-med-ris-och-minimajs-723152/"],
+  // ["Tomatsoppa och pannkakor", "Lök,Grädde,Morötter,Laktosfri mjölk", "https://www.ica.se/recept/tomatsoppa-med-krafttoast-719564/"],
 ];
 
 function ready(fn) {
