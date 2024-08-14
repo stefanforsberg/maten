@@ -151,7 +151,7 @@ ready(() => {
       daysHtml += `
       
       <div class="day day-${d + 1} shopping" data-shopping-ingredients="${mealsForWeek[d][1]}">
-        <span class="meal">${mealsForWeek[d][2] ? `<a href="${mealsForWeek[0][2]}" target="_blank">${mealsForWeek[d][0]}</a>` : mealsForWeek[d][0]}</span>
+        <span class="meal">${mealsForWeek[d][2] ? `<a href="${mealsForWeek[d][2]}" target="_blank">${mealsForWeek[d][0]}</a>` : mealsForWeek[d][0]}</span>
       </div>`
     }
 
