@@ -25,9 +25,9 @@ const schedule = [
   ],
   [
     ["Korv med potatismos 🥩🥔", "Korv, Potatis"],
-    ["Spicy Rigatonikyckling 🍗🍝", "Rigatoni,Moz,Ruccola,Ugnsrostade grönsaker,Kyckling"],
+    ["Spicy Rigatonikyckling 🍗🍝", "Rigatoni,Moz,Ruccola,Kyckling"],
     ["Fisktacos 🐟🌮", "Fisktacokrydda, Lax, Grönsaker, Mangosalso, Tortilla, Guaccemole, TacoChips"],
-    ["Quesadillas 🥬🍞", "Riven cheddaros,Tortillas"],
+    ["Quesadillas 🥬🍞", "Riven cheddarost,Tortillas,Salami"],
   ],
 
   // ["Pytt i panna", "Veg pytt,Rödbeter,Ägg"],
