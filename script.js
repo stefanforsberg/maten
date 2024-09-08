@@ -13,9 +13,9 @@ const schedule = [
   ],
   [
     ["Köttbullar & potatis 🥔🍖", "Nötfärs,Potatis,Mellangrädde,Lingonsylt,Ägg"],
-    ["Pasta kikärtor 🥬🍝", "Kilkärtor,Tomatsås,Kapris,Smör,Parmesan"],
+    ["Pasta kikärtor 🥬🍝", "Kikärtor,Tomatsås,Kapris,Parmesan"],
     ["Lax & nudelwok 🐟🍜", "Lax,Wokgrönsaker,Lime,Soja,Sweet chili sås,Nudlar"],
-    ["Korv med bröd 🌭", "Korv,bröd"],
+    ["Korv med bröd 🌭", "Korv,korvbröd"],
   ],
   [
     ["Fetaostlax med potatis 🐟🥔", "Lax,Potatis,Fetaost,Citron,Fryst dill", "https://www.zeta.nu/recept/fetaostfylld-lax-med-dill-och-citron/"],
