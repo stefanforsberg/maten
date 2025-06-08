@@ -61,7 +61,7 @@ function setupShoppingList() {
       .sort();
 
     ingredients.forEach((ingredient) => {
-      let div = document.createElement("div");
+      let div = document.createElement("li");
       shoppingListListElement.appendChild(div);
 
       div.innerHTML += ingredient;
@@ -132,7 +132,9 @@ const handleSwipe = () => {
 ready(() => {
   setupShoppingList();
 
-
+  document.getElementById("copy-button").addEventListener("click", () => {
+    navigator.clipboard.writeText(document.getElementById("shoppinglist-container").outerHTML)
+  })
 
   const today = moment();
 
