@@ -68,6 +68,13 @@ function setupShoppingList() {
     });
 
     shoppingListElement.style.display = "block";
+
+    const range = document.createRange();
+    const selection = window.getSelection();
+
+    range.selectNodeContents(shoppingListElement);
+    selection.removeAllRanges();
+    selection.addRange(range);
   });
 
   shoppingListElement.addEventListener("click", () => {
@@ -131,10 +138,6 @@ const handleSwipe = () => {
 
 ready(() => {
   setupShoppingList();
-
-  document.getElementById("copy-button").addEventListener("click", () => {
-    navigator.clipboard.writeText(document.querySelector(".shoppinglist-container").innerHTML)
-  })
 
   const today = moment();
 
