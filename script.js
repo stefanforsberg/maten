@@ -133,7 +133,7 @@ ready(() => {
   setupShoppingList();
 
   document.getElementById("copy-button").addEventListener("click", () => {
-    navigator.clipboard.writeText(document.getElementById("shoppinglist-container").outerHTML)
+    navigator.clipboard.writeText(document.querySelector(".shoppinglist-container"))
   })
 
   const today = moment();
